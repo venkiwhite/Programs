@@ -1,0 +1,23 @@
+FibonacciNumbers JavaScript:
+----------------------------
+https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e
+
+https://stackoverflow.com/questions/29973567/most-efficient-way-to-calculate-fibonacci-sequence-in-javascript
+
+    var memo = {};
+    var countInteration = 0;
+    var fib = function (n) {
+        if (memo.hasOwnProperty(n)) {
+            return memo[n];
+        }
+        countInteration++;
+        console.log("Interation = " + n);
+        if (n == 1 || n == 2) {
+            result = 1;
+        } else {
+            result = fib(n - 1) + fib(n - 2);
+        }
+        memo[n] = result;
+        return result;
+    }
+    //output `countInteration` = parameter `n`
